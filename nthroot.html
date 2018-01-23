@@ -1,12 +1,46 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>test</title>
-</head>
-<body>
+	<head>
+		<meta charset="utf-8">
+		<title>Calculate the nth root of a number</title>
+		<link rel="stylesheet" type="text/css" href="styles.css">
+		<link href="https://fonts.googleapis.com/css?family=Nunito+Sans" rel="stylesheet">
+	</head>
+	
+	<body>
 
+		<h1>Web application for calculate the nth root of a number</h1>
 
-	<script type="text/javascript" src="nthroot.js"></script>
+		<h2><u>The way it works :</u> <br><br>1. Enter the number whose root you want to calculate and select the order of the root. <br>2. Press "calculate" and you will have the result !</h2>
 
-</body>
+		<form id="form">
+			<h3>
+				Enter the number whose root you want to calculate :
+				<input type="number" name="number" required="" autofocus>
+			</h3>
+
+			<h3>
+				Select the order of the root :
+				<select name="order" form="form">
+					<option value="2" selected="selected">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+				</select>
+			</h3>
+
+			<input type="submit" name="calculate" value="Calculate" id="calculate">
+		</form>	
+
+		<h3 id="resultAnswer">The result of <sup><span id="rootOrder"></span></sup>&radic;<span id="number"></span> is : <span id="result"></span></h3>
+
+		<script type="text/javascript" src="nthroot.js"></script>
+	
+	</body>
+
 </html>

@@ -1,0 +1,49 @@
+body{
+	background-color: #877C7C;
+	color: #242424;
+	font-family: 'Nunito Sans', sans-serif;
+}
+h1{
+	width: 50vw;
+	position: relative;
+	left: 50%;
+	transform: translate(-50%, 0);
+	text-align: center;
+	padding: 1%;
+	color: #F0EDED;
+	background-color: #3C0505;
+}
+h2{
+	margin-top: 5vh;
+	margin-bottom: 5vh;
+}
+form{
+	position: relative;
+	left: 50%;
+	transform: translate(-50%, 0);
+	border: 3px #323232 solid;
+	padding: 1%;
+}
+h3{
+	width: 40vw;
+	position: relative;
+	left: 50%;
+	transform: translate(-50%, 0);
+}
+input{
+	font-family: 'Nunito Sans', sans-serif;
+}
+input, select{
+	font-size: 100%;
+}
+#calculate{
+	position: relative;
+	left: 50%;
+	transform: translate(-50%, 0);
+}
+#number{
+	text-decoration: overline;
+}
+#resultAnswer{
+	display: none;
+}

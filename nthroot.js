@@ -1,3 +1,8 @@
+/*-----------------------------------------------------------------------------------------------------------------------------*/
+/*----------------------------------------------------------MATH PART----------------------------------------------------------*/
+/*------------------------------------------------- ---FUNCTIONS DEFINITION----------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------------------------------------*/
+
 /*FUNCTION THAT PUT A NUMBER TO THE POWER OF THE EXPONENT*/
 function power(number, exponent){
 	var i = 1;
@@ -26,7 +31,7 @@ function exp(number){
 	var denominator;
 	var result = 0;
 
-	while(k < 500){
+	while(k < 100){
 		numerator = power(number, k);
 		denominator = factorial(k);
 		result += numerator/denominator;
@@ -38,11 +43,12 @@ function exp(number){
 /*NATURAL LOGARITHM OF A NUMBER*/
 function ln(number){
 	var k = 1;
+	var index = 1000;
 	var firstFactor;
 	var secondFactor;
 	var result = 0;
 
-	while(k < 1000){
+	while(k < index){
 		firstFactor = 1 / k;
 		secondFactor = power((number - 1) / number, k);
 		result += firstFactor * secondFactor;
@@ -53,6 +59,12 @@ function ln(number){
 
 /*NTH ROOT OF A NUMBER*/
 function nthRoot(number, rootExponent){
+	if(number == 0){
+		return 0;
+	}
+	if(number == 1){
+		return 1;
+	}
 	return exp(1/rootExponent * ln(number));
 }
 
@@ -66,3 +78,30 @@ function refineRoot(result, rootExponent, originalNumber){
 		return result;
 	}
 }
+
+
+/*-----------------------------------------------------------------------------------------------------------------------------*/
+/*----------------------------------------------------------HTML PART----------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------------------------------------*/
+
+var form = document.getElementById("form");
+var result;
+
+form.addEventListener("submit",function(e){
+	e.preventDefault(); 
+	var number = form.elements.number.value;
+	var order = form.elements.order.value;
+
+	result = nthRoot(number, order);
+	result = refineRoot(result, order, number);
+
+	if(order != 2){
+		document.getElementById("rootOrder").textContent = order;
+	}else{
+		document.getElementById("rootOrder").textContent = "";
+	}
+	document.getElementById("number").textContent = number;
+	document.getElementById("result").textContent = result;
+	document.getElementById("resultAnswer").style.display = "block";
+	
+});
