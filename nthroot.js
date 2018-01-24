@@ -48,6 +48,29 @@ function ln(number){
 	var secondFactor;
 	var result = 0;
 
+	/*ACCURACY OPTIMIZATION*/
+	if (number >= 16000){
+		index *= 100;
+	}else if (number >= 14000){
+		index *= 90;
+	}else if (number >= 12000){
+		index *= 80;
+	}else if (number >= 10000){
+		index *= 70;
+	}else if (number >= 8000){
+		index *= 60;
+	}else if (number >= 6000){
+		index *= 50;
+	}else if (number >= 4000){
+		index *= 40;
+	}else if (number >= 2000){
+		index *= 30;
+	}else if (number >= 1000){
+		index *= 20;
+	}else if (number >= 500){
+		index *= 10;
+	}
+
 	while(k < index){
 		firstFactor = 1 / k;
 		secondFactor = power((number - 1) / number, k);
