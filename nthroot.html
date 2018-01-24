@@ -9,11 +9,19 @@
 	
 	<body>
 
-		<h1>Web application for calculate the nth root of a number</h1>
+		<h1>
+			Web application for calculate the nth root of a number
+			<br>
+			<span id="indication">(Performed without the help of math libraries)</span>
+		</h1>
 
 		<h2><u>The way it works :</u> <br><br>1. Enter the number whose root you want to calculate and select the order of the root. <br>2. Press "calculate" and you will have the result !</h2>
 
-		<p><u>Note :</u> The larger the number you enter, the longer the calculation time will be. The screen may remain frozen for a few seconds before displaying the result. <br>You can read the explanations below.</p>
+		<p>
+			<u>Note :</u> The larger the number you enter, the longer the calculation time will be. The screen may remain frozen for a few seconds before displaying the result. <br>You can read the explanations below.
+			<br>
+			<u>Note 2 :</u> Javascript must be enabled in your web browser.
+		</p>
 
 		<form id="form">
 			<h3>
@@ -40,6 +48,46 @@
 		</form>	
 
 		<h3 id="resultAnswer">The result of <sup><span id="rootOrder"></span></sup>&radic;<span id="number"></span> is : <span id="result"></span></h3>
+
+		<!--Explanations-->
+		<br>
+		<hr>
+		<br>
+
+		<h3 style="text-align: center; margin: 0; text-decoration: underline;">Explanations</h3>
+
+		<p>
+			1. According to the simple mathematical principles concerning the nth roots, we know that : 
+			<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/d7873203eb76042fcd24056c553de8c86054a2df" alt="nth root"> 
+			= 
+			<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/828ecec40be966aa3a03d8d16b7c8e7108402132" alt="fractionnal exponent">.
+		</p>
+		<p>
+			2. We also know that we can write the exponential function like this : <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/b8cc06279d975eddb1d5e3b82f3409537827b3d3" alt="exponential function">.
+		</p>
+		<p>
+			3. By using the Euler Transform on the Mercator series, we can write the natural logarithm function like this : <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/f4c77cbd34fe687bef51732083c84fc2202bf3e8" alt="natural logarithm function">
+		</p>
+		<br>
+		<p>
+			Therefore, by using relations 2 and 3 in relation 1, we are able to compute the nth root of a number using only the basic arithmetic operators (+, -, x, /).
+			<br>
+			Unfortunately, a problem arises when we want to calculate a sum with an index going to infinity (the letter n in the sums above). As you know, the larger the index, the longer the calculation time and the variable containing the result of the operation will be heavy.
+			<br>
+			For the purposes of this application, I took the initiative to take a maximum index value equal to 100,000.
+			<br>
+			As you also know, the value 100,000 and the infinite are far from being comparable, and that is why the larger the value of the number of which we want to compute the nth root, the more the result will be inaccurate.
+		</p>
+		<p>
+			<u>Sources :</u>
+			<ul>
+				<li><a target="_blank" href="https://en.wikipedia.org/wiki/Nth_root">https://en.wikipedia.org/wiki/Nth_root</a></li>
+				<li><a target="_blank" href="https://en.wikipedia.org/wiki/Exponentiation">https://en.wikipedia.org/wiki/Exponentiation</a></li>
+				<li><a target="_blank" href="https://en.wikipedia.org/wiki/Exponential_function">https://en.wikipedia.org/wiki/Exponential_function</a></li>
+				<li><a target="_blank" href="https://en.wikipedia.org/wiki/Natural_logarithm#Derivative,_Taylor_series">https://en.wikipedia.org/wiki/Natural_logarithm#Derivative,_Taylor_series</a></li>
+			</ul>
+		</p>
+
 
 		<script type="text/javascript" src="nthroot.js"></script>
 	

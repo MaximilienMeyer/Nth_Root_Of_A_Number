@@ -13,9 +13,12 @@ h1{
 	color: #F0EDED;
 	background-color: #3C0505;
 }
+#indication{
+	font-size: 75%;
+}
 h2{
-	margin-top: 5vh;
-	margin-bottom: 5vh;
+	margin-top: 4vh;
+	margin-bottom: 4vh;
 }
 form{
 	position: relative;
@@ -46,4 +49,12 @@ input, select{
 }
 #resultAnswer{
 	display: none;
+}
+img{
+	height: 5vh;
+	position: relative;
+	top: 2vh;
+}
+a{
+	color: #242424;
 }
